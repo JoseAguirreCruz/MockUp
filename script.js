@@ -1,4 +1,24 @@
 $(document).ready(function() {
+
+    function adjustNav() {
+        var windowWidth = $(window).width();
+        if (windowWidth <= 1024 && windowWidth >= 769) {
+          // Show the "More" dropdown and hide specific nav items
+        $(".more-dropdown").show();
+          $(".nav-links > li").slice(5, 9).hide(); // Adjust indices if necessary
+        } else {
+          // Hide the "More" dropdown and show all nav items
+        $(".more-dropdown").hide();
+          $(".nav-links > li").slice(5, 9).show(); // Adjust indices if necessary
+        }
+    }
+    
+      // Adjust nav on page load
+    adjustNav();
+    
+      // Adjust nav whenever window is resized
+    $(window).resize(adjustNav);
+
   // Script for hamburger menu
 $(".hamburger-menu").click(function() {
     $("#mobile-nav").slideToggle("slow");

@@ -391,6 +391,22 @@ footer {
   text-decoration: underline; 
 }
 
+/* Existing CSS ... */
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .more-dropdown {
+    display: block !important; /* Override inline 'display: none;' */
+  }
+
+  /* Hide the items that are now in the "More" dropdown */
+  .nav-links > li:nth-child(n+6):nth-child(-n+9) {
+    display: none;
+  }
+}
+
+
+
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
 
